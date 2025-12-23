@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super-Agent</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="styles/myStyle.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">Super-Agent AI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#">ראשי</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">יכולות הסוכן</a></li>
+                <li class="nav-item"><a class="nav-link" href="#new-project">פרויקט חדש</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="p-5 text-center bg-light mb-4 hero-section">
+    <h1 class="mb-3">ברוכים הבאים לסוכן הפיתוח החכם</h1>
+    <h4 class="mb-3 text-muted">מנהלים את תהליך פיתוח ההדרכה מקצה לקצה בעזרת AI</h4>
+</header>
+
+<div class="container">
+
+    <section id="search-section" class="row justify-content-center mb-5">
+        <div class="col-md-6 d-flex">
+            <input type="text" id="searchInput" class="form-control ms-2" placeholder="חפש שלב בתהליך (למשל: QA, כתיבה...)">
+            <button class="btn btn-primary" onclick="filterContent()">חפש</button>
+        </div>
+    </section>
+
+    <section id="services" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/Analysis.png" class="card-img-top" alt="אפיון">
+                <div class="card-body">
+                    <h5 class="card-title">1. פיצוח ואפיון</h5>
+                    <p class="card-text">ניתוח חומרים גולמיים ויצירת מסמך אפיון מדויק.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/Script.png" class="card-img-top" alt="תסריט">
+                <div class="card-body">
+                    <h5 class="card-title">2. כתיבת תסריט</h5>
+                    <p class="card-text">יצירת תסריט ללומדה או סרטון המותאם לקהל היעד.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/media.png" class="card-img-top" alt="מדיה">
+                <div class="card-body">
+                    <h5 class="card-title">3. יצירת מדיה (GenAI)</h5>
+                    <p class="card-text">מחולל תמונות, קריינות ווידאו באופן אוטומטי.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/ProductDev.png" class="card-img-top" alt="פיתוח">
+                <div class="card-body">
+                    <h5 class="card-title">4. פיתוח תוצר</h5>
+                    <p class="card-text">המרת התסריט והמדיה ללומדה אינטראקטיבית.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/Quality.png" class="card-img-top" alt="בקרת איכות">
+                <div class="card-body">
+                    <h5 class="card-title">5. בקרת איכות (QA)</h5>
+                    <p class="card-text">סריקת התוצר לאיתור באגים ותקלות טכניות.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/LMS.png" class="card-img-top" alt="הפצה">
+                <div class="card-body">
+                    <h5 class="card-title">6. הפצה ל-LMS</h5>
+                    <p class="card-text">העלאת החבילה למערכת הניהול ושיבוץ לומדים.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col content-card">
+            <div class="card h-100 shadow-sm">
+                <img src="images/Analytics.png" class="card-img-top" alt="אנליטיקה">
+                <div class="card-body">
+                    <h5 class="card-title">7. אנליטיקות ושיפור</h5>
+                    <p class="card-text">ניתוח נתוני אמת והמלצות לשיפור ההדרכה.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <section id="new-project" class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card p-4 bg-light border-0">
+                <h3 class="text-center mb-4">התחל פרויקט חדש</h3>
+                <form id="lmsForm">
+                    <div class="mb-3">
+                        <label for="projectName" class="form-label">שם הפרויקט</label>
+                        <input type="text" class="form-control" id="projectName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="targetAudience" class="form-label">קהל יעד</label>
+                        <input type="text" class="form-control" id="targetAudience" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="outputType" class="form-label">סוג תוצר מבוקש</label>
+                        <select class="form-select" id="outputType">
+                            <option value="elearning">לומדה אינטראקטיבית</option>
+                            <option value="video">סרטון הדרכה</option>
+                            <option value="jobaid">עזר עבודה (PDF)</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-success w-100" onclick="reportToLMS()">צור פרויקט ודווח למערכת</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer class="bg-dark text-white text-center p-3">
+    <p>פרויקט אמצע תכנות 3 | פותח ע"י אופיר שרעבי נופר ברעם וליהי הררי</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="jScripts/SCORM_API_wrapper.js"></script>
+<script src="jScripts/javascript.js"></script>
+
+</body>
+</html>

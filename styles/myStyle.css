@@ -1,0 +1,68 @@
+/* רקע לכותרת הראשית - נותן תחושה של הייטק/AI */
+/* styles/myStyle.css */
+
+.hero-section {
+    /* 1. הגדרת התמונה והשכבה הכהה מעליה (כדי שהטקסט יהיה קריא) */
+    /* אנחנו משתמשים ב- .. כדי לצאת מתיקיית ה-style ולהיכנס ל-images */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../images/header.png');
+
+    /* 2. הגדרות כדי שהתמונה תכסה את כל האזור ולא תחזור על עצמה */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* 3. עיצוב הטקסט והגבול התחתון */
+    color: white;
+    border-bottom: 5px solid #051E32;
+    padding: 100px 20px; /* הגדלתי קצת את הגובה למראה מרשים יותר */
+}
+
+/* שאר העיצובים נשארים אותו דבר... */
+.hero-section h1 {
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section h4 {
+    color: #f8f9fa !important; /* דורס את ה-muted של בוטסטראפ */
+    font-weight: 300;
+}
+
+/* עיצוב הכרטיסיות (השלבים) */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* נקי יותר בלי מסגרת */
+}
+
+/* אפקט ריחוף (Hover) - הכרטיסייה "קופצת" למעלה */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+    cursor: pointer;
+}
+
+/* גובה אחיד לתמונות בכרטיסיות */
+.card-img-top {
+    height: 180px;
+    object-fit: cover; /* חותך את התמונה יפה כדי שתמלא את המסגרת */
+    border-bottom: 3px solid #f0f0f0;
+}
+
+/* צבעי כותרות בכרטיסיות */
+.card-title {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* כפתור החיפוש */
+#search-section input {
+    border-radius: 50px; /* פינות עגולות */
+    padding: 10px 20px;
+}
+
+#search-section button {
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
